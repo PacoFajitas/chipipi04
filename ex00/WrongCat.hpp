@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/05 21:09:31 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/07 19:55:41 by tfiguero         ###   ########.fr       */
+/*   Created: 2024/06/07 19:50:10 by tfiguero          #+#    #+#             */
+/*   Updated: 2024/06/07 19:52:15 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-class Cat : public Animal
+class WrongCat : public WrongAnimal
 {
     public:
-        Cat();
-        Cat(Cat& old);
-        Cat& operator=(Cat& old);
-        ~Cat();
+        WrongCat();
+        WrongCat(WrongCat& old);
+        WrongCat& operator=(WrongCat& old);
+        ~WrongCat();
         void makeSound(void) const;
 };
 #endif

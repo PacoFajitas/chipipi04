@@ -1,45 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/05 21:08:55 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/07 19:55:39 by tfiguero         ###   ########.fr       */
+/*   Created: 2024/06/07 19:47:00 by tfiguero          #+#    #+#             */
+/*   Updated: 2024/06/07 19:48:54 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-Animal::Animal()
+WrongAnimal::WrongAnimal()
 {
     std::cout << "Basic constructor called" << std::endl;
     _type = "Random";
 }
 
-Animal::Animal(Animal &old)
+WrongAnimal::WrongAnimal(WrongAnimal &old)
 {
     *this = old;
     std::cout << "Copy constructor called" << std::endl;
 }
 
-Animal& Animal::operator=(Animal& old)
+WrongAnimal& WrongAnimal::operator=(WrongAnimal& old)
 {
     this->_type = old._type;
     return(*this);
 }
-Animal::~Animal()
+WrongAnimal::~WrongAnimal()
 {
     std::cout << "Destructor called" << std::endl;
 }
 
-void Animal::makeSound() const
+void WrongAnimal::makeSound() const
 {
     std::cout << " * RANDOM NOISES * " << std::endl;
 }
 
-std::string Animal::getType() const
+std::string WrongAnimal::getType() const
 {
     return(_type);
 }

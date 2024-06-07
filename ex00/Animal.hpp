@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 21:08:41 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/05 21:24:38 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/07 19:55:39 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ class Animal
         Animal();
         Animal(Animal& old);
         Animal& operator=(Animal& old);
-        ~Animal();
-        void makeSound();
+        virtual ~Animal();
+        std::string getType() const;
+        virtual void makeSound() const;
 };
 #endif

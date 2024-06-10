@@ -6,14 +6,14 @@
 #    By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/11 02:44:06 by tfiguero          #+#    #+#              #
-#    Updated: 2024/06/09 21:25:53 by tfiguero         ###   ########.fr        #
+#    Updated: 2024/06/09 21:41:48 by tfiguero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Brainiac
+NAME = Abstract
 
 SRC_FILES = main.cpp\
-			Animal.cpp\
+			AAnimal.cpp\
 			Cat.cpp\
 			Dog.cpp\
 			WrongCat.cpp\

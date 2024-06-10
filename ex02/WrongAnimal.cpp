@@ -1,39 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/07 19:50:02 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/09 19:09:53 by tfiguero         ###   ########.fr       */
+/*   Created: 2024/06/07 19:47:00 by tfiguero          #+#    #+#             */
+/*   Updated: 2024/06/07 19:48:54 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#include "WrongAnimal.hpp"
 
-WrongCat::WrongCat()
+WrongAnimal::WrongAnimal()
 {
     std::cout << "Basic constructor called" << std::endl;
-    _type = "WrongCat";
+    _type = "Random";
 }
 
-WrongCat::WrongCat(WrongCat &old)
+WrongAnimal::WrongAnimal(WrongAnimal &old)
 {
     *this = old;
     std::cout << "Copy constructor called" << std::endl;
 }
 
-WrongCat& WrongCat::operator=(WrongCat& old)
+WrongAnimal& WrongAnimal::operator=(WrongAnimal& old)
 {
     this->_type = old._type;
     return(*this);
 }
-WrongCat::~WrongCat()
+WrongAnimal::~WrongAnimal()
 {
     std::cout << "Destructor called" << std::endl;
 }
-void WrongCat::makeSound() const
+
+void WrongAnimal::makeSound() const
 {
-    std::cout << " Meow Meow " << std::endl;
+    std::cout << " * RANDOM NOISES * " << std::endl;
+}
+
+std::string WrongAnimal::getType() const
+{
+    return(_type);
 }

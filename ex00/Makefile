@@ -6,11 +6,11 @@
 #    By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/11 02:44:06 by tfiguero          #+#    #+#              #
-#    Updated: 2024/06/07 19:52:36 by tfiguero         ###   ########.fr        #
+#    Updated: 2024/06/09 19:10:39 by tfiguero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ScavTrap
+NAME = Animals
 
 SRC_FILES = main.cpp\
 			Animal.cpp\

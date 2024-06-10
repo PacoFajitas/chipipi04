@@ -1,39 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   AAnimal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/07 19:50:02 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/09 19:09:53 by tfiguero         ###   ########.fr       */
+/*   Created: 2024/06/05 21:08:55 by tfiguero          #+#    #+#             */
+/*   Updated: 2024/06/09 21:38:48 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#include "AAnimal.hpp"
 
-WrongCat::WrongCat()
+AAnimal::AAnimal()
 {
-    std::cout << "Basic constructor called" << std::endl;
-    _type = "WrongCat";
+    std::cout << "Basic AAnimal constructor called" << std::endl;
+    _type = "Random";
 }
 
-WrongCat::WrongCat(WrongCat &old)
+AAnimal::AAnimal(AAnimal &old)
 {
     *this = old;
     std::cout << "Copy constructor called" << std::endl;
 }
 
-WrongCat& WrongCat::operator=(WrongCat& old)
+AAnimal& AAnimal::operator=(AAnimal& old)
 {
     this->_type = old._type;
     return(*this);
 }
-WrongCat::~WrongCat()
+AAnimal::~AAnimal()
 {
     std::cout << "Destructor called" << std::endl;
 }
-void WrongCat::makeSound() const
+
+std::string AAnimal::getType() const
 {
-    std::cout << " Meow Meow " << std::endl;
+    return(_type);
 }

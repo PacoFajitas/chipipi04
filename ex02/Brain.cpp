@@ -1,39 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/07 19:50:02 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/09 19:09:53 by tfiguero         ###   ########.fr       */
+/*   Created: 2024/06/09 19:11:59 by tfiguero          #+#    #+#             */
+/*   Updated: 2024/06/09 21:12:06 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#include "Brain.hpp"
 
-WrongCat::WrongCat()
+Brain::Brain()
 {
-    std::cout << "Basic constructor called" << std::endl;
-    _type = "WrongCat";
+        std::cout << "Basic brain constructor called" << std::endl;
 }
 
-WrongCat::WrongCat(WrongCat &old)
+Brain::Brain(const Brain& old)
 {
     *this = old;
-    std::cout << "Copy constructor called" << std::endl;
 }
-
-WrongCat& WrongCat::operator=(WrongCat& old)
+Brain& Brain::operator=(const Brain& old)
 {
-    this->_type = old._type;
+    
+    for(int i = 0; i<100; i++)
+        _ideas[i] = old._ideas[i];
     return(*this);
 }
-WrongCat::~WrongCat()
-{
-    std::cout << "Destructor called" << std::endl;
-}
-void WrongCat::makeSound() const
-{
-    std::cout << " Meow Meow " << std::endl;
-}
+Brain::~Brain(){};

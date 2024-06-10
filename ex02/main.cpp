@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 15:16:48 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/09 19:09:29 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/09 21:41:14 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@
 
 int main()
 {
-    Animal* meta = new Animal();
-    Animal* j = new Dog();
-    Animal* i = new Cat();
+    AAnimal* j = new Dog();
+    AAnimal* i = new Cat();
     WrongAnimal* k = new WrongCat();
 
 
@@ -28,8 +27,6 @@ int main()
     i->makeSound(); //will output the cat sound!
     j->makeSound();
     k->makeSound();
-    meta->makeSound();
-    delete meta;
     delete j;
     delete i;
     delete k;

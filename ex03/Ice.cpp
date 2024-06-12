@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 13:33:26 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/10 18:49:38 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/12 22:37:14 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Ice::Ice()
 {
+	_type = "Ice";
 	std::cout << "Ice constructor called" << std::endl;
 }
 Ice::~Ice()
@@ -34,8 +35,7 @@ Ice& Ice::operator=(const Ice& old)
 AMateria* Ice::clone() const
 {
 	std::cout << "You cloned some Ice" << std::endl;
-	Ice *ret = new Ice();
-	return(ret);
+	return(new Ice());
 }
 void Ice::use(ICharacter& target)
 {

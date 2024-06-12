@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 22:59:46 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/11 19:26:00 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/12 22:01:40 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "iostream"
 #include "ICharacter.hpp"
 
+class ICharacter;
 class AMateria
 {   
     protected:

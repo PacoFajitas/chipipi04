@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 22:59:38 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/11 19:26:05 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/12 22:07:38 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ AMateria::~AMateria()
 
 AMateria& AMateria::operator=(const AMateria& old)
 {
-    
+    this->_type = old._type;
+    return(*this);
 }
 void AMateria::use(ICharacter& target)
 {
@@ -42,7 +43,3 @@ const std::string &AMateria::getType() const
     return(this->_type);
 }
 
-AMateria::~AMateria()
-{
-    std::cout << "Materia destructor called " << std::endl;
-}

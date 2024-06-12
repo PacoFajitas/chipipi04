@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 17:42:43 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/12 14:43:54 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/12 22:37:34 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ Character::Character()
 Character::Character(std::string name)
 {
 	_name = name;
+	_discarded = NULL;
+	for(int i = 0; i < 4; i++)
+		this->_inventory[i] = NULL;
 	std::cout << "Character constructor with name: " << _name << "called" << std::endl;
 }
 Character::Character(const Character&old)
@@ -39,16 +42,17 @@ Character& Character::operator=(const Character& old)
 	{
 		if (old._inventory[i] != NULL)
 		{
-			this->_inventory[i] = old._inventory[i]->clone();	
+			this->_inventory[i] = old._inventory[i]->clone();
 		}else
 		{
 			this->_inventory[i] = NULL;
 		}		
 	}
-	if(old._discarded)
-		this->_discarded = old.copyTrash();
-	else
-		this->_discarded = NULL;
+	// if(old._discarded)
+		// this->_discarded = old.copyTrash();
+	// else
+	this->_discarded = NULL;
+	return(*this);
 }
 Character::~Character()
 {
@@ -57,7 +61,7 @@ Character::~Character()
 		if (this->_inventory[i] != NULL)
 			delete _inventory[i];
 	}
-	delete _inventory;
+	// delete _inventory;
 	if (this->_discarded != NULL)
 		delete _discarded;	
 }
@@ -71,11 +75,14 @@ void Character::equip(AMateria* m)
 	{
 		if (this->_inventory[i] == NULL)
 		{
-			std::cout << "Materia equiped on slot " << i << std::endl;
-			this->_inventory[i] = m->clone();
+			this->_inventory[i] = m;
+			std::cout << "Materia equiped on slot " << i << " with type: " << this->_inventory[i]->getType() << std::endl;
 			break;
 		}
+		else
+			std::cout <<"inventory is not null jiji kms" << std::endl; 
 	}
+	std::cout << "holi" << std::endl;
 }
 void Character::unequip(int idx)
 {
@@ -87,8 +94,16 @@ void Character::unequip(int idx)
 }
 void Character::use(int idx, ICharacter& target)
 {
+	// std::cout << this->_inventory[0]->getType() << std::endl;
 	if(this->_inventory[idx] != NULL)
 		this->_inventory[idx]->use(target);
 }
-void Character::addTrash(AMateria* trash){}
-AMateria* Character::copyTrash() const{}
+void Character::addTrash(AMateria* trash)
+{
+	this->_countTrash = 1;
+	(void)trash;
+}
+AMateria* Character::copyTrash() const
+{
+	return(this->_discarded->clone());
+}

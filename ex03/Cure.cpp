@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 13:34:20 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/11 19:24:50 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/12 22:16:46 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Cure::Cure()
 {
+	_type = "Cure";
 	std::cout << "Cure basic constructor called" << std::endl;
 }
 Cure::~Cure()
@@ -28,6 +29,7 @@ Cure::Cure(const Cure& old)
 Cure& Cure::operator=(const Cure& old)
 {
 	this->_type = old._type;
+	return(*this);
 }
 AMateria* Cure::clone() const
 {
@@ -35,7 +37,7 @@ AMateria* Cure::clone() const
 	std::cout << "You cloned a Cure" << std::endl;
 	return(ret);
 }
-void Cure::use(ICharacter& target) const
+void Cure::use(ICharacter& target)
 {
 	std::cout <<  "* Cure " << target.getName() << "'s wounds";
 }

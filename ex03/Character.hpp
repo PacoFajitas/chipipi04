@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 17:42:51 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/12 13:19:37 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/12 21:59:46 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Character : public ICharacter
 {
 	private:
-		int			_countTrash = 0;
+		int			_countTrash ;
 		std::string _name;
 		AMateria	*_inventory[4];
 		AMateria	*_discarded;

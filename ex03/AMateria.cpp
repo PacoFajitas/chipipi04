@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 22:59:38 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/10 13:41:54 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/11 19:26:05 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ AMateria& AMateria::operator=(const AMateria& old)
 }
 void AMateria::use(ICharacter& target)
 {
-    std::cout << "Undefined materia is trying to do something to " << target.getName();
+    (void)target;
 }
 
 const std::string &AMateria::getType() const

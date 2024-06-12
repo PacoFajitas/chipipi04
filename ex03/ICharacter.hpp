@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 23:05:22 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/10 23:13:38 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/11 19:25:18 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,13 @@
 
 
 #include "iostream"
+#include "AMateria.hpp"
 
 class AMateria;
 class ICharacter
 {
-    protected:
-        std::string _name;
     public:
-        ICharacter();
-        virtual ~ICharacter() {}
+        virtual ~ICharacter(){}
         virtual std::string const & getName() const = 0;
         virtual void equip(AMateria* m) = 0;
         virtual void unequip(int idx) = 0;

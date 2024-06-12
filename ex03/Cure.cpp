@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 13:34:20 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/10 18:48:25 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/11 19:24:50 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ AMateria* Cure::clone() const
 	std::cout << "You cloned a Cure" << std::endl;
 	return(ret);
 }
-void Cure::use(ICharacter& target)
+void Cure::use(ICharacter& target) const
 {
 	std::cout <<  "* Cure " << target.getName() << "'s wounds";
 }

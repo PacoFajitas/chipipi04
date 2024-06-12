@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 17:42:51 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/12 13:11:22 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/12 13:19:37 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Character : public ICharacter
 		int			_countTrash = 0;
 		std::string _name;
 		AMateria	*_inventory[4];
-		AMateria	**_discarded;
+		AMateria	*_discarded;
 	public:
 		Character();
 		Character(std::string name);
@@ -32,5 +32,7 @@ class Character : public ICharacter
         void equip(AMateria* m);
         void unequip(int idx);
         void use(int idx, ICharacter& target);
+		void addTrash(AMateria* trash);
+		AMateria* copyTrash() const;
 };
 #endif

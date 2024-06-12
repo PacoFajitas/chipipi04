@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 17:42:43 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/11 19:35:19 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/12 14:43:54 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ Character::Character()
 	_discarded = NULL;
 	for(int i = 0; i < 4; i++)
 		this->_inventory[i] = NULL;
+	
 }
 Character::Character(std::string name)
 {
@@ -45,7 +46,7 @@ Character& Character::operator=(const Character& old)
 		}		
 	}
 	if(old._discarded)
-		this->_discarded = old._discarded->clone();
+		this->_discarded = old.copyTrash();
 	else
 		this->_discarded = NULL;
 }
@@ -56,6 +57,7 @@ Character::~Character()
 		if (this->_inventory[i] != NULL)
 			delete _inventory[i];
 	}
+	delete _inventory;
 	if (this->_discarded != NULL)
 		delete _discarded;	
 }
@@ -79,8 +81,14 @@ void Character::unequip(int idx)
 {
 	if(this->_inventory[idx] != NULL)
 	{
-		this->_discarded = this->_inventory[idx];
+		this->addTrash(this->_inventory[idx]);
 		this->_inventory[idx] = NULL;
 	}
 }
-void Character::use(int idx, ICharacter& target){}
+void Character::use(int idx, ICharacter& target)
+{
+	if(this->_inventory[idx] != NULL)
+		this->_inventory[idx]->use(target);
+}
+void Character::addTrash(AMateria* trash){}
+AMateria* Character::copyTrash() const{}

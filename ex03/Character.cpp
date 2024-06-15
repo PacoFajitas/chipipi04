@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 17:42:43 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/12 22:37:34 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/15 21:31:33 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,22 @@ Character::Character()
 	_name = "paco";
 	std::cout << "Default character constructor called, name of character will be"<<_name << std::endl;
 	_discarded = NULL;
+	_countTrash = 1;
 	for(int i = 0; i < 4; i++)
 		this->_inventory[i] = NULL;
+	this->_discarded = new AMateria*[_countTrash];
+	this->_discarded[0] = NULL;
 	
 }
 Character::Character(std::string name)
 {
 	_name = name;
 	_discarded = NULL;
+	_countTrash = 1;
 	for(int i = 0; i < 4; i++)
 		this->_inventory[i] = NULL;
+	this->_discarded = new AMateria*[_countTrash];
+	this->_discarded[0] = NULL;
 	std::cout << "Character constructor with name: " << _name << "called" << std::endl;
 }
 Character::Character(const Character&old)
@@ -48,9 +54,11 @@ Character& Character::operator=(const Character& old)
 			this->_inventory[i] = NULL;
 		}		
 	}
-	// if(old._discarded)
-		// this->_discarded = old.copyTrash();
-	// else
+	this->_countTrash = old._countTrash;
+	for (int i = 0; i < _countTrash - 1; i++)
+	{
+		this->_discarded[i] = old._discarded[i];
+	}
 	this->_discarded = NULL;
 	return(*this);
 }
@@ -60,11 +68,17 @@ Character::~Character()
 	{
 		if (this->_inventory[i] != NULL)
 			delete _inventory[i];
+		_inventory[i] = NULL;
 	}
-	// delete _inventory;
-	if (this->_discarded != NULL)
-		delete _discarded;	
+	for (int i = 0; i < this->_countTrash; i++)
+	{
+		if (_discarded && _discarded[i])
+			delete _discarded[i];
+		
+	}
+	delete [] _discarded;
 }
+	
 std::string const & Character::getName() const
 {
 	return(this->_name);
@@ -82,10 +96,11 @@ void Character::equip(AMateria* m)
 		else
 			std::cout <<"inventory is not null jiji kms" << std::endl; 
 	}
-	std::cout << "holi" << std::endl;
 }
 void Character::unequip(int idx)
 {
+	if (idx > 3)
+		return ;	
 	if(this->_inventory[idx] != NULL)
 	{
 		this->addTrash(this->_inventory[idx]);
@@ -94,16 +109,21 @@ void Character::unequip(int idx)
 }
 void Character::use(int idx, ICharacter& target)
 {
-	// std::cout << this->_inventory[0]->getType() << std::endl;
 	if(this->_inventory[idx] != NULL)
 		this->_inventory[idx]->use(target);
 }
 void Character::addTrash(AMateria* trash)
 {
-	this->_countTrash = 1;
-	(void)trash;
-}
-AMateria* Character::copyTrash() const
-{
-	return(this->_discarded->clone());
+	if (trash == NULL)
+		return ;	
+	this->_discarded[_countTrash - 1] = trash;
+	_countTrash += 1;
+	AMateria **newTrash = new AMateria *[_countTrash];
+	for (int i = 0; i < _countTrash - 1; i++)
+	{
+		newTrash[i] = this->_discarded[i];
+	}
+	delete []_discarded;
+	newTrash[_countTrash - 1] = NULL;
+	this->_discarded = newTrash;
 }

@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 14:45:02 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/12 15:16:05 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/16 16:55:27 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class MateriaSource : public IMateriaSource
 		~MateriaSource();
 		void learnMateria(AMateria*);
 		AMateria* createMateria(std::string const & type);
+		void printMaterias();
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 17:42:51 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/15 19:52:57 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/16 16:24:26 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ class Character : public ICharacter
         void unequip(int idx);
         void use(int idx, ICharacter& target);
 		void addTrash(AMateria* trash);
+		void printMaterias();
 };
 #endif

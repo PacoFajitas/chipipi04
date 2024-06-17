@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 23:05:22 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/11 19:25:18 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/16 16:25:27 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ class ICharacter
         virtual void equip(AMateria* m) = 0;
         virtual void unequip(int idx) = 0;
         virtual void use(int idx, ICharacter& target) = 0;
+        virtual void printMaterias() = 0;
 };
 #endif

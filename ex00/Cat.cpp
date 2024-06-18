@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 21:09:35 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/07 19:55:40 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/17 20:05:04 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 Cat::Cat()
 {
-    std::cout << "Basic constructor called" << std::endl;
+    std::cout << "Basic cat constructor called" << std::endl;
     _type = "Cat";
 }
 
 Cat::Cat(Cat &old)
 {
     *this = old;
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "Cat copy constructor called" << std::endl;
 }
 
 Cat& Cat::operator=(Cat& old)
@@ -31,7 +31,7 @@ Cat& Cat::operator=(Cat& old)
 }
 Cat::~Cat()
 {
-    std::cout << "Destructor called" << std::endl;
+    std::cout << "Cat destructor called" << std::endl;
 }
 void Cat::makeSound() const
 {

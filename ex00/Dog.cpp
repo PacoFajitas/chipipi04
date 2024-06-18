@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 21:09:39 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/07 19:55:41 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/17 20:05:21 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 Dog::Dog()
 {
-    std::cout << "Basic constructor called" << std::endl;
+    std::cout << "Basic dog constructor called" << std::endl;
     _type = "Dog";
 }
 
 Dog::Dog(Dog &old)
 {
     *this = old;
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "Dog copy constructor called" << std::endl;
 }
 
 Dog& Dog::operator=(Dog& old)
@@ -31,7 +31,7 @@ Dog& Dog::operator=(Dog& old)
 }
 Dog::~Dog()
 {
-    std::cout << "Destructor called" << std::endl;
+    std::cout << "Dog destructor called" << std::endl;
 }
 void Dog::makeSound() const
 {

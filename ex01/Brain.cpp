@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 19:11:59 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/09 21:12:06 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/17 20:20:37 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,11 @@ Brain::Brain(const Brain& old)
 }
 Brain& Brain::operator=(const Brain& old)
 {
-    
     for(int i = 0; i<100; i++)
         _ideas[i] = old._ideas[i];
     return(*this);
 }
-Brain::~Brain(){};
+Brain::~Brain()
+{
+    std::cout << "Basic brain destructor called" << std::endl;
+};

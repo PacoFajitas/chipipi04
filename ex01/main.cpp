@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 15:16:48 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/09 19:09:29 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/18 00:28:58 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,10 @@ int main()
     Animal* j = new Dog();
     Animal* i = new Cat();
     WrongAnimal* k = new WrongCat();
+    Dog* tusMuertosPisaos = new Dog();
 
-
+    tusMuertosPisaos = (Dog *)j;
+    std::cout << tusMuertosPisaos->getType() << " " << std::endl;
     std::cout << j->getType() << " " << std::endl;
     std::cout << i->getType() << " " << std::endl;
     std::cout << k->getType() << " " << std::endl;
@@ -33,5 +35,6 @@ int main()
     delete j;
     delete i;
     delete k;
+    // delete tusMuertosPisaos;
     return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 21:09:35 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/09 21:34:08 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/17 20:25:54 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,9 @@ Cat::Cat(Cat &old)
 
 Cat& Cat::operator=(Cat& old)
 {
+    delete this->_brain;
     this->_type = old._type;
-    if (old._brain == NULL)
-        _brain = new Brain();
-    else    
-        this->_brain = new Brain(*old._brain);
+    this->_brain = new Brain(*old._brain);
     return(*this);
 }
 Cat::~Cat()

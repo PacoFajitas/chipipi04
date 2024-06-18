@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 19:47:00 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/07 19:48:54 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/17 20:05:52 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 WrongAnimal::WrongAnimal()
 {
-    std::cout << "Basic constructor called" << std::endl;
+    std::cout << "Basic WrongAnimal constructor called" << std::endl;
     _type = "Random";
 }
 
 WrongAnimal::WrongAnimal(WrongAnimal &old)
 {
     *this = old;
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "WrongAnimal copy constructor called" << std::endl;
 }
 
 WrongAnimal& WrongAnimal::operator=(WrongAnimal& old)
@@ -31,7 +31,7 @@ WrongAnimal& WrongAnimal::operator=(WrongAnimal& old)
 }
 WrongAnimal::~WrongAnimal()
 {
-    std::cout << "Destructor called" << std::endl;
+    std::cout << "WrongAnimal destructor called" << std::endl;
 }
 
 void WrongAnimal::makeSound() const

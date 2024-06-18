@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 19:47:31 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/07 19:48:30 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/17 20:07:23 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class WrongAnimal
         WrongAnimal();
         WrongAnimal(WrongAnimal& old);
         WrongAnimal& operator=(WrongAnimal& old);
-        ~WrongAnimal();
+        virtual ~WrongAnimal();
         std::string getType() const;
         void makeSound() const;
 };

@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 19:50:02 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/09 19:09:53 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/17 20:06:14 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 WrongCat::WrongCat()
 {
-    std::cout << "Basic constructor called" << std::endl;
+    std::cout << "Basic WrongCat constructor called" << std::endl;
     _type = "WrongCat";
 }
 
 WrongCat::WrongCat(WrongCat &old)
 {
     *this = old;
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "WrongCat copy constructor called" << std::endl;
 }
 
 WrongCat& WrongCat::operator=(WrongCat& old)
@@ -31,7 +31,7 @@ WrongCat& WrongCat::operator=(WrongCat& old)
 }
 WrongCat::~WrongCat()
 {
-    std::cout << "Destructor called" << std::endl;
+    std::cout << "WrongCat destructor called" << std::endl;
 }
 void WrongCat::makeSound() const
 {

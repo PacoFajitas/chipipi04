@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 21:09:39 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/09 21:33:56 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/18 00:23:19 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ Dog::Dog(Dog &old)
 
 Dog& Dog::operator=(Dog& old)
 {
+    std::cout << "new brain: " << &_brain << std::endl;
+    std::cout << "new brain: " << &old._brain << std::endl;
+    delete _brain;
     this->_type = old._type;
-    if (old._brain == NULL)
-        _brain = new Brain();
-    else    
-        this->_brain = new Brain(*old._brain);
+    this->_brain = new Brain(*old._brain);
     return(*this);
 }
 Dog::~Dog()

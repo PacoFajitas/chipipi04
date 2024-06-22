@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 21:09:31 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/09 21:42:23 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/22 20:24:45 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class Cat : public AAnimal
         Brain* _brain;
     public:
         Cat();
-        Cat(Cat& old);
-        Cat& operator=(Cat& old);
+        Cat(const Cat& old);
+        Cat& operator=(const Cat& old);
         ~Cat();
         void makeSound(void) const;
 };

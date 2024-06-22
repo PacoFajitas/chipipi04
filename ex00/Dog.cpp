@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 21:09:39 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/17 20:05:21 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/22 20:20:01 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ Dog::Dog()
     _type = "Dog";
 }
 
-Dog::Dog(Dog &old)
+Dog::Dog(const Dog &old)
 {
     *this = old;
     std::cout << "Dog copy constructor called" << std::endl;
 }
 
-Dog& Dog::operator=(Dog& old)
+Dog& Dog::operator=(const Dog& old)
 {
     this->_type = old._type;
     return(*this);

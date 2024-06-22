@@ -18,13 +18,13 @@ AAnimal::AAnimal()
     _type = "Random";
 }
 
-AAnimal::AAnimal(AAnimal &old)
+AAnimal::AAnimal(const AAnimal &old)
 {
     *this = old;
     std::cout << "Copy constructor called" << std::endl;
 }
 
-AAnimal& AAnimal::operator=(AAnimal& old)
+AAnimal& AAnimal::operator=(const AAnimal& old)
 {
     this->_type = old._type;
     return(*this);

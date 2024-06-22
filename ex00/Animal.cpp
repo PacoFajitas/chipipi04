@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 21:08:55 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/17 20:04:50 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/22 20:18:52 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ Animal::Animal()
     _type = "Random";
 }
 
-Animal::Animal(Animal &old)
+Animal::Animal(const Animal &old)
 {
     *this = old;
     std::cout << "Animal copy constructor called" << std::endl;
 }
 
-Animal& Animal::operator=(Animal& old)
+Animal& Animal::operator=(const Animal& old)
 {
     this->_type = old._type;
     return(*this);

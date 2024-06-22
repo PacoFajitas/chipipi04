@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 21:09:42 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/07 19:55:42 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/22 20:20:14 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ class Dog : public Animal
 {
     public:
         Dog();
-        Dog(Dog& old);
-        Dog& operator=(Dog& old);
+        Dog(const Dog& old);
+        Dog& operator=(const Dog& old);
         void makeSound(void) const;
         ~Dog();
 };

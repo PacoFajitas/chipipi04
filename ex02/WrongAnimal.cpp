@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 19:47:00 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/07 19:48:54 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/22 20:25:24 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ WrongAnimal::WrongAnimal()
     _type = "Random";
 }
 
-WrongAnimal::WrongAnimal(WrongAnimal &old)
+WrongAnimal::WrongAnimal(const WrongAnimal &old)
 {
     *this = old;
     std::cout << "Copy constructor called" << std::endl;
 }
 
-WrongAnimal& WrongAnimal::operator=(WrongAnimal& old)
+WrongAnimal& WrongAnimal::operator=(const WrongAnimal& old)
 {
     this->_type = old._type;
     return(*this);

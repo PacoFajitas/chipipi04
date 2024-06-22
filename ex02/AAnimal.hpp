@@ -22,8 +22,8 @@ class AAnimal
         std::string _type;
     public:
         AAnimal();
-        AAnimal(AAnimal& old);
-        AAnimal& operator=(AAnimal& old);
+        AAnimal(const AAnimal& old);
+        AAnimal& operator=(const AAnimal& old);
         virtual ~AAnimal();
         std::string getType() const;
         virtual void makeSound() const = 0;

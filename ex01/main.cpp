@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 15:16:48 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/18 00:28:58 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/22 20:17:31 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,14 @@
 int main()
 {
     Animal* meta = new Animal();
-    Animal* j = new Dog();
+    Dog* j = new Dog();
     Animal* i = new Cat();
     WrongAnimal* k = new WrongCat();
     Dog* tusMuertosPisaos = new Dog();
 
-    tusMuertosPisaos = (Dog *)j;
+    std::cout << "Antes del igual \n";
+    *tusMuertosPisaos = *j;
+    std::cout << "Despues del igual \n";
     std::cout << tusMuertosPisaos->getType() << " " << std::endl;
     std::cout << j->getType() << " " << std::endl;
     std::cout << i->getType() << " " << std::endl;
@@ -35,6 +37,6 @@ int main()
     delete j;
     delete i;
     delete k;
-    // delete tusMuertosPisaos;
+    delete tusMuertosPisaos;
     return 0;
 }

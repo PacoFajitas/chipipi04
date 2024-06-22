@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 21:09:35 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/17 20:25:54 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/22 20:22:20 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ Cat::Cat()
     _brain = new Brain();
 }
 
-Cat::Cat(Cat &old)
+Cat::Cat(const Cat &old)
 {
     *this = old;
     std::cout << "Copy cat constructor called" << std::endl;
 }
 
-Cat& Cat::operator=(Cat& old)
+Cat& Cat::operator=(const Cat& old)
 {
     delete this->_brain;
     this->_type = old._type;

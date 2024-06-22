@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 21:08:41 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/06/17 20:09:24 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/06/22 20:18:31 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class Animal
         std::string _type;
     public:
         Animal();
-        Animal(Animal& old);
-        Animal& operator=(Animal& old);
+        Animal(const Animal& old);
+        virtual Animal& operator=(const Animal& old);
         virtual ~Animal();
         std::string getType() const;
         virtual void makeSound() const;
